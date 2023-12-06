@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Meu Site - Vendas</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-image: url(parede-de-concreto.jpg);
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #pergunta {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .opcao {
+            display: block;
+            margin: 10px auto;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="curriculo.html">Currículo Adalbino</a></li>
+        <li><a href="dauda.html">Currículo Dauda</a></li>
+        <li><a href="vendas.html">Vendas</a></li>
+        <li><a href="contatos.html">Contatos</a></li>
+    </ul>
+</nav>
+
+<section class="content">
+    <h1>Confira nossas Ofertas de Vendas</h1>
+</section>
+<div class="container">
+    <div class="product">
+        <div class="image">
+            <img class="product-image" src="orange.jpg" alt="">
+        </div>
+        <div class="color">
+            <span class="orange active" data-image="orange.jpg" data-color="#DE522F"></span>
+            <span class="green" data-image="green.jpg" data-color="#9ABE62"></span>
+            <span class="black" data-image="black.jpg" data-color="#222627"></span>
+            <span class="red" data-image="red.jpg" data-color="#B41D26"></span>
+        </div>
+        <div class="title">
+            
+Tênis de corrida masculino Velocity Nitro
+        </div>
+        <div class="detail">
+            <p>Preço : <span>$50</span></p>
+            <a href="#">Adicionar ao Carinho</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    $(".color span").click(function(){
+
+     $(".color span").removeClass("active");
+     $(this).addClass("active");
+     $(".detail span").css("color",$(this).attr("data-color"));
+     $(".detail a").css((this).attr("data-color"));
+     $(".product-image").attr("src",$(this).attr("data-image"));
+     $("body").css($(this).attr("data-color"));
+    });
+</script>
+</body>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: #DE522F;
+    background-image: url(parede-de-concreto.jpg);
+}
+
+.container{
+    width: 350px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.container .product{
+    background: #fafafa;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.container .product .image{
+    width: 300px;
+    height: 150px;
+    margin: auto;
+}
+
+.container .product .image .product-image{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.8s linear;
+}
+
+.container .product .color{
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    margin: 15px;
+}
+
+.container .product .color span{
+    width: 15px;
+    height: 15px;
+    margin: 0 15px;
+    border-radius: 50%;
+    background: #DE522F;
+    cursor: pointer;
+    position: relative;
+}
+
+.container .product .color .green{
+    background: #9ABE62;
+
+}
+
+.container .product .color .black{
+    background: #222627;
+}
+
+.container .product .color .red{
+    background: #B41D26;
+}
+
+.container .product .color .orange{
+    background: #DE522F;
+}
+
+.container .product .color .active::after{
+    content: "";
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    position: absolute;
+    left: -3px;
+    top: -3px;
+}
+
+.container .product .title{
+    font-size: 22px;
+    text-align: center;
+}
+
+.container .product .detail{
+    text-align: center;
+}
+
+.container .product .detail p{
+    margin: 15px;
+    font-size: 25px;
+}
+
+.container .product .detail p span{
+    color: #DE522F;
+}
+
+.container .product .detail a{
+    text-decoration: none;
+    background: #DE522F;
+    padding: 8px 45px;
+    border-radius: 8px;
+    color: white;
+    margin: 15px;
+}
+</style>
+
+</html>
